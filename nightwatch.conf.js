@@ -8,6 +8,10 @@ module.exports = (function(settings) {
   if (process.env.LT_ACCESS_KEY) {
     settings["test_settings"]["default"]["access_key"] = process.env.LT_ACCESS_KEY;
   }
+  
+  if (process.env.LT_BUILD_NAME) {
+    settings["test_settings"]["default"]["desiredCapabilities"]["build"] = process.env.LT_BUILD_NAME;
+  }
 
   if (process.env.SELENIUM_HOST) {
     settings.selenium.host = process.env.SELENIUM_HOST;
