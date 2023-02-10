@@ -11,6 +11,8 @@ module.exports = (function(settings) {
   
   if (process.env.LT_BUILD_NAME) {
     settings["test_settings"]["default"]["desiredCapabilities"]["build"] = process.env.LT_BUILD_NAME;
+  }else{
+    settings["test_settings"]["default"]["desiredCapabilities"]["build"] = "ELSE BUILD";
   }
 
   if (process.env.SELENIUM_HOST) {
